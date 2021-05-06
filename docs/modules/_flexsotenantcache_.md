@@ -18,7 +18,7 @@
 
 Ƭ **IEventFunction**: *function*
 
-Defined in flexsotenantcache.ts:3
+*Defined in [flexsotenantcache.ts:3](https://github.com/jowavp/flexso-cf-tenantcache/blob/599acbb/src/flexsotenantcache.ts#L3)*
 
 #### Type declaration:
 

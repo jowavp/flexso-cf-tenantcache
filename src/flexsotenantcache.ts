@@ -79,8 +79,8 @@ export default class TenantCache {
    * 
    * @template T This is the type of the value that is stored in the cache.
    */
-  set<T>(tenantName: string, key: NodeCache.Key, value: T) {
-    return this.getTenantCache(tenantName).set<T>(key, value);
+  set<T>(tenantName: string, key: NodeCache.Key, value: T, ttl: number = this.ttl) {
+    return this.getTenantCache(tenantName).set<T>(key, value, ttl);
   }
   /**
    * Function to delete a value from cache. 

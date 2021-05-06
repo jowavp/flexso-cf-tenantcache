@@ -49,7 +49,7 @@ export default class TenantCache {
      *
      * @template T This is the type of the value that is stored in the cache.
      */
-    set<T>(tenantName: string, key: NodeCache.Key, value: T): boolean;
+    set<T>(tenantName: string, key: NodeCache.Key, value: T, ttl?: number): boolean;
     /**
      * Function to delete a value from cache.
      * @param {string} tenantName Name of the current tenant

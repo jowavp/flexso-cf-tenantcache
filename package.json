@@ -1,6 +1,6 @@
 {
   "name": "flexso-cf-tenantcache",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Tenant aware caching",
   "main": "dist/flexsotenantcache.js",
   "files": [

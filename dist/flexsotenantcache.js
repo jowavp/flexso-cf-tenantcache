@@ -67,8 +67,8 @@ class TenantCache {
      *
      * @template T This is the type of the value that is stored in the cache.
      */
-    set(tenantName, key, value) {
-        return this.getTenantCache(tenantName).set(key, value);
+    set(tenantName, key, value, ttl = this.ttl) {
+        return this.getTenantCache(tenantName).set(key, value, ttl);
     }
     /**
      * Function to delete a value from cache.

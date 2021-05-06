@@ -38,7 +38,7 @@
 
 \+ **new TenantCache**(`ttl`: number): *[TenantCache](_flexsotenantcache_.tenantcache.md)*
 
-Defined in flexsotenantcache.ts:31
+*Defined in [flexsotenantcache.ts:31](https://github.com/jowavp/flexso-cf-tenantcache/blob/599acbb/src/flexsotenantcache.ts#L31)*
 
 create an instance of the tenant aware cache.
 
@@ -56,7 +56,7 @@ Name | Type | Description |
 
 • **events**: *object*
 
-Defined in flexsotenantcache.ts:12
+*Defined in [flexsotenantcache.ts:12](https://github.com/jowavp/flexso-cf-tenantcache/blob/599acbb/src/flexsotenantcache.ts#L12)*
 
 #### Type declaration:
 
@@ -68,7 +68,7 @@ ___
 
 • **tenantCaches**: *object*
 
-Defined in flexsotenantcache.ts:7
+*Defined in [flexsotenantcache.ts:7](https://github.com/jowavp/flexso-cf-tenantcache/blob/599acbb/src/flexsotenantcache.ts#L7)*
 
 #### Type declaration:
 
@@ -80,7 +80,7 @@ ___
 
 • **ttl**: *number*
 
-Defined in flexsotenantcache.ts:10
+*Defined in [flexsotenantcache.ts:10](https://github.com/jowavp/flexso-cf-tenantcache/blob/599acbb/src/flexsotenantcache.ts#L10)*
 
 ## Methods
 
@@ -88,7 +88,7 @@ Defined in flexsotenantcache.ts:10
 
 ▸ **del**(`tenantName`: string, `keys`: string | number | NodeCache.Key): *number*
 
-Defined in flexsotenantcache.ts:91
+*Defined in [flexsotenantcache.ts:91](https://github.com/jowavp/flexso-cf-tenantcache/blob/599acbb/src/flexsotenantcache.ts#L91)*
 
 Function to delete a value from cache.
 
@@ -107,7 +107,7 @@ ___
 
 ▸ **flush**(`tenantName`: string): *void*
 
-Defined in flexsotenantcache.ts:100
+*Defined in [flexsotenantcache.ts:100](https://github.com/jowavp/flexso-cf-tenantcache/blob/599acbb/src/flexsotenantcache.ts#L100)*
 
 Function to clear the cache for a specific tenant.
 
@@ -125,7 +125,7 @@ ___
 
 ▸ **flushAll**(): *void*
 
-Defined in flexsotenantcache.ts:108
+*Defined in [flexsotenantcache.ts:108](https://github.com/jowavp/flexso-cf-tenantcache/blob/599acbb/src/flexsotenantcache.ts#L108)*
 
 Function to clear the cache for all tenants.
 
@@ -137,7 +137,7 @@ ___
 
 ▸ **get**‹**T**›(`tenantName`: string, `key`: NodeCache.Key, `storeFn?`: undefined | function): *Promise‹undefined | T›*
 
-Defined in flexsotenantcache.ts:52
+*Defined in [flexsotenantcache.ts:52](https://github.com/jowavp/flexso-cf-tenantcache/blob/599acbb/src/flexsotenantcache.ts#L52)*
 
 Async function to get a key from the cache.
 This function is async because the stroreFunction can be an async function to retrieve the value.
@@ -164,7 +164,7 @@ ___
 
 ▸ **getSync**‹**T**›(`tenantName`: string, `key`: NodeCache.Key): *undefined | T*
 
-Defined in flexsotenantcache.ts:69
+*Defined in [flexsotenantcache.ts:69](https://github.com/jowavp/flexso-cf-tenantcache/blob/599acbb/src/flexsotenantcache.ts#L69)*
 
 Sync function to get a key from the cache.
 
@@ -189,7 +189,7 @@ ___
 
 ▸ **getTenantCache**(`tenantName`: string): *NodeCache‹›*
 
-Defined in flexsotenantcache.ts:142
+*Defined in [flexsotenantcache.ts:142](https://github.com/jowavp/flexso-cf-tenantcache/blob/599acbb/src/flexsotenantcache.ts#L142)*
 
 **Parameters:**
 
@@ -205,7 +205,7 @@ ___
 
 ▸ **on**(`eventName`: any, `eventFn`: [IEventFunction](../modules/_flexsotenantcache_.md#ieventfunction)): *void*
 
-Defined in flexsotenantcache.ts:120
+*Defined in [flexsotenantcache.ts:120](https://github.com/jowavp/flexso-cf-tenantcache/blob/599acbb/src/flexsotenantcache.ts#L120)*
 
 This function can be used to add events to a tenant cache.
 
@@ -224,7 +224,7 @@ ___
 
 ▸ **registerEvents**(`tenantCache`: NodeCache): *void*
 
-Defined in flexsotenantcache.ts:134
+*Defined in [flexsotenantcache.ts:134](https://github.com/jowavp/flexso-cf-tenantcache/blob/599acbb/src/flexsotenantcache.ts#L134)*
 
 **Parameters:**
 
@@ -240,7 +240,7 @@ ___
 
 ▸ **set**‹**T**›(`tenantName`: string, `key`: NodeCache.Key, `value`: T): *boolean*
 
-Defined in flexsotenantcache.ts:82
+*Defined in [flexsotenantcache.ts:82](https://github.com/jowavp/flexso-cf-tenantcache/blob/599acbb/src/flexsotenantcache.ts#L82)*
 
 Function to set a value in the cache.
 
@@ -266,7 +266,7 @@ ___
 
 ▸ **getTtlHours**(`hours`: number): *number*
 
-Defined in flexsotenantcache.ts:20
+*Defined in [flexsotenantcache.ts:20](https://github.com/jowavp/flexso-cf-tenantcache/blob/599acbb/src/flexsotenantcache.ts#L20)*
 
 TTL of the cache is in seconds.
 This function converts hours in seconds.
@@ -287,7 +287,7 @@ ___
 
 ▸ **getTtlMinutes**(`minutes`: number): *number*
 
-Defined in flexsotenantcache.ts:29
+*Defined in [flexsotenantcache.ts:29](https://github.com/jowavp/flexso-cf-tenantcache/blob/599acbb/src/flexsotenantcache.ts#L29)*
 
 TTL of the cache is in seconds.
 This function converts minutes in seconds.
