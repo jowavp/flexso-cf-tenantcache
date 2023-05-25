@@ -6,15 +6,6 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const node_cache_1 = __importDefault(require("node-cache"));
 class TenantCache {
     /**
-     * create an instance of the tenant aware cache.
-     * @param ttl standard time to live in seconds. 0 = infinity;
-     */
-    constructor(ttl) {
-        this.events = {};
-        this.ttl = ttl;
-        this.tenantCaches = {};
-    }
-    /**
      * TTL of the cache is in seconds.
      * This function converts hours in seconds.
      * @param hours number of hours
@@ -31,6 +22,15 @@ class TenantCache {
      */
     static getTtlMinutes(minutes) {
         return 60 * minutes;
+    }
+    /**
+     * create an instance of the tenant aware cache.
+     * @param ttl standard time to live in seconds. 0 = infinity;
+     */
+    constructor(ttl) {
+        this.events = {};
+        this.ttl = ttl;
+        this.tenantCaches = {};
     }
     /**
      * Async function to get a key from the cache.
@@ -91,7 +91,7 @@ class TenantCache {
      * Function to clear the cache for all tenants.
      */
     flushAll() {
-        Object.keys(this.tenantCaches).forEach(k => {
+        Object.keys(this.tenantCaches).forEach((k) => {
             this.tenantCaches[k].flushAll();
             delete this.tenantCaches[k];
         });
@@ -106,11 +106,20 @@ class TenantCache {
         }
         this.events.eventName.push(eventFn);
         // register the event on all existing caches.
-        Object.values(this.tenantCaches).forEach(c => c.on(eventName, eventFn));
+        Object.values(this.tenantCaches).forEach((c) => c.on(eventName, eventFn));
+    }
+    /**
+     * This function returns a map of statistics for each tenant cache in the object.
+     * @returns A Map object containing the statistics of each tenant cache in the current object's
+     * `tenantCaches` property. The keys of the Map are the names of the tenants and the values are the
+     * statistics of their respective caches.
+     */
+    getStats() {
+        return Object.keys(this.tenantCaches).reduce((acc, tenantName) => acc.set(tenantName, this.tenantCaches[tenantName].getStats()), new Map());
     }
     registerEvents(tenantCache) {
         Object.entries(this.events).forEach(([key, events]) => {
-            events.forEach(eFn => tenantCache.on(key, eFn));
+            events.forEach((eFn) => tenantCache.on(key, eFn));
         });
     }
     getTenantCache(tenantName) {
@@ -118,10 +127,10 @@ class TenantCache {
             this.tenantCaches[tenantName] = new node_cache_1.default({
                 stdTTL: this.ttl,
                 checkperiod: this.ttl * 0.2,
-                useClones: false
+                useClones: false,
             });
+            this.registerEvents(this.tenantCaches[tenantName]);
         }
-        this.registerEvents(this.tenantCaches[tenantName]);
         return this.tenantCaches[tenantName];
     }
 }

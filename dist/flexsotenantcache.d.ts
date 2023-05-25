@@ -1,5 +1,5 @@
-import NodeCache from 'node-cache';
-export declare type IEventFunction = (key?: NodeCache.Key, value?: any) => void;
+import NodeCache from "node-cache";
+export type IEventFunction = (key?: NodeCache.Key, value?: any) => void;
 export default class TenantCache {
     private tenantCaches;
     private ttl;
@@ -71,6 +71,13 @@ export default class TenantCache {
      * This function can be used to add events to a tenant cache.
      */
     on(eventName: any, eventFn: IEventFunction): void;
+    /**
+     * This function returns a map of statistics for each tenant cache in the object.
+     * @returns A Map object containing the statistics of each tenant cache in the current object's
+     * `tenantCaches` property. The keys of the Map are the names of the tenants and the values are the
+     * statistics of their respective caches.
+     */
+    getStats(): Map<string, NodeCache.Stats>;
     private registerEvents;
     private getTenantCache;
 }
