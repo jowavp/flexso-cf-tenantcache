@@ -123,7 +123,7 @@ function incomingMessage(namespace: string, cache: TenantCache) {
   };
 }
 
-export default class TenantClusterCache {
+export class TenantClusterCache {
   private cache?: TenantCache;
   private resolvers: { [key: string]: (value: unknown) => void } = {};
 

@@ -165,3 +165,5 @@ export default class TenantCache {
     return this.tenantCaches[tenantName];
   }
 }
+
+export { TenantClusterCache } from "./flexsotenantclustercache";
